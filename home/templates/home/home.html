@@ -1,0 +1,45 @@
+{% extends "home/header.html" %}
+
+{% block styles %}
+{% load staticfiles %}
+	<style>
+			html,
+			body {
+			 background-image:url({% static 'home/images/bg03.png' %});
+			 background-repeat: repeat-y;
+			 background-position: center;
+			 height:100%*height;
+			}
+	</style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class='row'>
+		<div style='border: 1px solid green; background-color: white; opacity: 0.9;'>
+			<h4 class='title' style='margin:15px;'><strong>What would you like to search for?</strong></h4>
+				<form method='post' action='../../home/search/'>{% csrf_token %}
+					<center>
+						<input name='search' type='text' placeholder='1080 Asus Graphics Card'/>
+					</center>
+					<div class="col-sm-8">
+						<input name='min_price' type='number' placeholder='Minimum Price'/>
+						<input name='max_price' type='number' placeholder='Maximum Price'/>
+					</div>
+					<input type='submit' value='Search'/>
+				</form>
+		</div>
+	</div>
+</div>
+
+	<!-- <form>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Submit</button>
+	</form> -->
+
+
+
+{% endblock %}

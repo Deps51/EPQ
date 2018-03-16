@@ -1,0 +1,14 @@
+{% extends "home/header.html" %}
+
+{% block content %}
+  <h2>Thanks for singing up!</h2>
+  <h4>Feel free to navigate round the site and add products to your basket - this will allow you to to get notified about price drops.<br>
+      Please use use the navigation bar at the top to go to a different page.</h4>
+
+	<h2>{{ user.get_full_name }}</h2>
+	<ul>
+	  <li>Username: {{ user.username }}</li>
+	  <li>Location: {{ user.profile.location }}</li>
+	</ul>
+    
+{% endblock %}
